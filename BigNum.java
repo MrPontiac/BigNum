@@ -27,7 +27,36 @@ class BigNum {
     arrowNum = nArrowNum;
   }
   
-  public String toString() {
-    return base + '\u2192' + exponent + '\u2192' + arrowNum;
+  public boolean compareTo(BigNum val) {
+    if(base == val.base && exponent == val.exponent && arrowNum == val.arrowNum) {
+      return true;
+    }
+    return false;
   }
+  
+  public String toString() {
+    return Double.toString(base) + " " + '\u21d2' + " " + Double.toString(exponent) + " " + '\u21d2' + " " + Double.toString(arrowNum);
+  }
+  
+  public String toString(int num) {
+    if(num == 1) {
+      return(Double.toString(base) + " " + '\u21d1' + Superscript(Double.toString(arrowNum)) + " " + Double.toString(exponent));
+    }
+    return toString();
+  }
+  private String Superscript(String str) { 
+    str = str.replaceAll("\\.", "'");
+		str = str.replaceAll("1", "¹");
+		str = str.replaceAll("2", "²");
+		str = str.replaceAll("3", "³");
+		str = str.replaceAll("4", "⁴");
+		str = str.replaceAll("5", "⁵");
+		str = str.replaceAll("6", "⁶");
+		str = str.replaceAll("7", "⁷");
+		str = str.replaceAll("8", "⁸");
+		str = str.replaceAll("9", "⁹");
+		str = str.replaceAll("0", "⁰");
+    str = str.replaceAll("E", "ᴱ");
+		return str;
+	}
 }
