@@ -1,8 +1,10 @@
 class Main {
   public static void main(String[] args) {
-    BigNum num = new BigNum(1e7, 1e34, 1e92);
+    BigNum num = new BigNum(1e7, 1e34, -9e307);
     System.out.println("BigNum formatted as normal is: " + num);
     System.out.println("BigNum formatted as kunth up arrow is: " + num.toString(1));
+    num.addArrows(-1e308);
+    System.out.println("BigNum is now: " + num);
     BigNum num1 = new BigNum(1e7);
     BigNum num2 = new BigNum(1e7, 1e5, 1e282);
     BigNum num3 = new BigNum(1e7, 0 ,0);

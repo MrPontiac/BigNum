@@ -44,6 +44,19 @@ class BigNum {
     }
     return toString();
   }
+  
+  public void addArrows(double num) {
+    if(arrowNum == Double.MAX_VALUE) {
+      return;
+    }
+    if(arrowNum + num == Double.POSITIVE_INFINITY) {
+      arrowNum = Double.MAX_VALUE;
+    } else if(arrowNum + num == Double.NEGATIVE_INFINITY) {
+      arrowNum = -Double.MAX_VALUE;
+    } else {
+      arrowNum += num;
+    }
+  }
   private String Superscript(String str) { 
     str = str.replaceAll("\\.", "'");
 		str = str.replaceAll("1", "¹");
