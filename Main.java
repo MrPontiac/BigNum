@@ -8,7 +8,9 @@ class Main {
     BigNum num1 = new BigNum(1e7);
     BigNum num2 = new BigNum(1e7, 1e5, 1e282);
     BigNum num3 = new BigNum(1e7, 0 ,0);
-    System.out.println("BigNum 1 is " + (num1.isEqualTo(num2) ? "Equal to" : "Smaller than") + " num2 but num1 is " + (num1.isEqualTo(num3) ? "Equal to" : "Smaller than") + " num3");
+    System.out.println("BigNum 1 is " + (num1.isEqualTo(num2) ? "Equal to" : "Smaller or Greater than") + " num2 but num1 is " + (num1.isEqualTo(num3) ? "Equal to" : "Smaller than") + " num3");
     System.out.println("The og num is " + (num.isEqualTo(num3) ? "Equal to" : "Smaller or Greater than") + " num3");
+    BigNum big = BigNum.valueOf("1e9 ⇑¹.⁰ᵉ¹² 1e14");
+    System.out.println("Big is " + big);
   }
 }
