@@ -27,7 +27,7 @@ class BigNum {
     arrowNum = nArrowNum;
   }
   
-  public boolean compareTo(BigNum val) {
+  public boolean isEqualTo(BigNum val) {
     if(base == val.base && exponent == val.exponent && arrowNum == val.arrowNum) {
       return true;
     }
@@ -59,28 +59,28 @@ class BigNum {
   }
   
   public void addBase(double num) {
-    if(Base == Double.MAX_VALUE) {
+    if(base == Double.MAX_VALUE) {
       return;
     }
-    if(Base + num == Double.POSITIVE_INFINITY) {
-      Base = Double.MAX_VALUE;
-    } else if(Base + num == Double.NEGATIVE_INFINITY) {
-      Base = -Double.MAX_VALUE;
+    if(base + num == Double.POSITIVE_INFINITY) {
+      base = Double.MAX_VALUE;
+    } else if(base + num == Double.NEGATIVE_INFINITY) {
+      base = -Double.MAX_VALUE;
     } else {
-      Base += num;
+      base += num;
     }
   }
   
   public void addExponent(double num) {
-    if(Exponent == Double.MAX_VALUE) {
+    if(exponent == Double.MAX_VALUE) {
       return;
     }
-    if(Exponent + num == Double.POSITIVE_INFINITY) {
-      Exponent = Double.MAX_VALUE;
-    } else if(Exponent + num == Double.NEGATIVE_INFINITY) {
-      Exponent = -Double.MAX_VALUE;
+    if(exponent + num == Double.POSITIVE_INFINITY) {
+      exponent = Double.MAX_VALUE;
+    } else if(exponent + num == Double.NEGATIVE_INFINITY) {
+      exponent = -Double.MAX_VALUE;
     } else {
-      Exponent += num;
+      exponent += num;
     }
   }
   
