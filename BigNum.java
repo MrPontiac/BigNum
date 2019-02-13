@@ -57,19 +57,46 @@ class BigNum {
       arrowNum += num;
     }
   }
+  
+  public void addBase(double num) {
+    if(Base == Double.MAX_VALUE) {
+      return;
+    }
+    if(Base + num == Double.POSITIVE_INFINITY) {
+      Base = Double.MAX_VALUE;
+    } else if(Base + num == Double.NEGATIVE_INFINITY) {
+      Base = -Double.MAX_VALUE;
+    } else {
+      Base += num;
+    }
+  }
+  
+  public void addExponent(double num) {
+    if(Exponent == Double.MAX_VALUE) {
+      return;
+    }
+    if(Exponent + num == Double.POSITIVE_INFINITY) {
+      Exponent = Double.MAX_VALUE;
+    } else if(Exponent + num == Double.NEGATIVE_INFINITY) {
+      Exponent = -Double.MAX_VALUE;
+    } else {
+      Exponent += num;
+    }
+  }
+  
   private String Superscript(String str) { 
     str = str.replaceAll("\\.", "'");
-		str = str.replaceAll("1", "¹");
-		str = str.replaceAll("2", "²");
-		str = str.replaceAll("3", "³");
-		str = str.replaceAll("4", "⁴");
-		str = str.replaceAll("5", "⁵");
-		str = str.replaceAll("6", "⁶");
-		str = str.replaceAll("7", "⁷");
-		str = str.replaceAll("8", "⁸");
-		str = str.replaceAll("9", "⁹");
-		str = str.replaceAll("0", "⁰");
+    str = str.replaceAll("1", "¹");
+    str = str.replaceAll("2", "²");
+    str = str.replaceAll("3", "³");
+    str = str.replaceAll("4", "⁴");
+    str = str.replaceAll("5", "⁵");
+    str = str.replaceAll("6", "⁶");
+    str = str.replaceAll("7", "⁷");
+    str = str.replaceAll("8", "⁸");
+    str = str.replaceAll("9", "⁹");
+    str = str.replaceAll("0", "⁰");
     str = str.replaceAll("E", "ᴱ");
-		return str;
-	}
+    return str;
+  }
 }
